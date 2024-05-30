@@ -60,6 +60,9 @@
 
 @section('main')
     <div class="main-content">
+    <div class="title">
+            <h3 style="Color:red">DANH SÁCH BÀI VIẾT</h3>
+        </div>
         <div class="article">
             @foreach($articles as $article)
                 <a href = "{{route('article-detail', ['slug' => $article -> slug])}}" class="item">

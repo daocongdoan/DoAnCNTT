@@ -83,29 +83,33 @@
 
 @section('main')
 <div class="contact">
+<div class="address" style="margin-left: 20px">
+    <h3>Địa chỉ liên hệ</h3>
+</div>
+<br>
             <div>
-                <div class="footer-title" style="text-align:center"><b>Địa chỉ liên hệ gồm 3 cửa hàng mở rộng khắp miền bắc</b></div>
-                <div class="bottom-footer layout-center">
-        <div class="container">
+                <div class="contact-footer-title" style="text-align:left; margin-left: 20px"><b>Địa chỉ liên hệ gồm 3 cửa hàng mở rộng khắp miền bắc</b></div>
+                <div class="contact-bottom-footer layout-center">
+        <div class="contact-container">
             <div>
-                <div class="footer-title">Cơ sở 1</div>
+                <div class="contact-footer-title">Cơ sở 1</div>
                 <div class="list">
-                    <p><i class="fa-solid fa-angles-right"></i>Đặt tại số 132/78, Nguyên Xá, Bắc Từ Liêm, Hà Nội</p>
-                    <img src="C:\Users\Admin\Downloads" alt="Mô tả ảnh">
+                    <p><i class="fa-solid fa-house"></i>Đặt tại số 132/78, Nguyên Xá, Bắc Từ Liêm, Hà Nội</p>
+                    <img src="{{asset('assets/images/users/chgiay1.jpg')}}" alt="cuahang">
                 </div>
             </div>
             <div>
-                <div class="footer-title">Cở sở 2</div>
+                <div class="contact-footer-title">Cở sở 2</div>
                 <div class="list">
-                    <p><i class="fa-solid fa-angles-right"></i>Số nhà 20, ngõ 91, đường Trần Duy Hưng, Cầu Giấy, Hà Nội</p>
-                    <img src="C:\Users\Admin\Downloads" alt="Mô tả ảnh">
+                    <p><i class="fa-solid fa-house"></i>Số nhà 20, ngõ 91, đường Trần Duy Hưng, Cầu Giấy, Hà Nội</p>
+                    <img src="{{asset('assets/images/users/chgiay2.jpg')}}" alt="cuahang" >
                 </div>
             </div>
             <div>
-                <div class="footer-title">Cở sở 3</div>
+                <div class="contact-footer-title">Cở sở 3</div>
                 <div class="list">
-                    <p><i class="fa-solid fa-angles-right"></i>Ninh Giang, Hải Dương</p>
-                    <img src="C:\Users\Admin\Downloads" alt="Mô tả ảnh">
+                    <p><i class="fa-solid fa-house"></i></i>Ninh Giang, Hải Dương</p>
+                    <img src="{{asset('assets/images/users/chgiay3.jpg')}}" alt="cuahang">
                 </div>
             </div>
         </div>

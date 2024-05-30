@@ -17,6 +17,10 @@
             "title" => "BÀI VIẾT",
             "link" => route('article')
         ],
+        [
+            "title" => "SẢN PHẨM",
+            "link" => route('home-page')
+        ],
     ];
 @endphp
 

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 use App\Http\Controllers\ImageController;
 
@@ -55,28 +56,32 @@ class AuthController extends Controller
 
     public function handleRegister(Request $request, ImageController $img)
     {
-        $validator = $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
             'phone_number' => 'required|string|max:255|unique:users',
-            //'password_confirmation' => 'same:password|min:6'
         ]);
-
-        $data_create = array_merge($img -> upload($request), [
+    
+        if ($validator->fails()) {
+            // Lấy thông tin về các lỗi validate
+            $errors = $validator->errors();
+    
+            // Trả về view với các lỗi
+            return redirect()->back()->withInput()->withErrors($errors);
+        }
+    
+        $data_create = array_merge($img->upload($request), [
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'phone_number' => $request->phone_number
         ]);
-
+    
         $user = User::create($data_create);
-
-        $notify = "
-            
-        ";
-
-        return redirect()->route('login-form')->withFragment('register')->withInput()->with('success', $notify);
+    
+        $notify = "Đăng ký tài khoản thành công!";
+        return redirect()->back()->withInput()->with('success', $notify);
     }
 
     public function handleLogout (Request $request) {

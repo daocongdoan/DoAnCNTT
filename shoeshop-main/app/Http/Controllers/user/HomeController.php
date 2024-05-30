@@ -48,7 +48,7 @@ class HomeController extends Controller
                 $filters['cate_id'] ?? null,
             );
         }else {
-            $products  = $this -> productRepository -> paginateWhereOrderBy(['status' => '1'], 'updated_at','DESC', $request -> page ?? 1, 5, ['*']);
+            $products  = $this -> productRepository -> paginateWhereOrderBy(['status' => '1'], 'updated_at','DESC', $request -> page ?? 1, 12, ['*']);
         }
 
         $current_filters = $request -> all();

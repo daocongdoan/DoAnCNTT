@@ -382,6 +382,14 @@
                         <button class = "closeAdd">OK</button>
                     </div>
                 </div>
+            @else 
+                <div class = "success_add success_close">
+                    <div class = "success_add_header">
+                    </div>
+                    <div class = "success_add_body">
+                        <button class = "closeAdd">OK</button>
+                    </div>
+                </div>
             @endif
             <div class="top">
                 <div class="left">

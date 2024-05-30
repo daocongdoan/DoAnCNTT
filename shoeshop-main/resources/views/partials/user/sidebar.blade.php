@@ -29,10 +29,16 @@
             <p class="name">DANH MỤC</p>
         </div>
         
-        <div class="card-body">
+        <div class="card-body card-cate-body">
             @foreach($categories as $category)
-                <p class = "cate-item">{{$category -> title}}</p>
+                @if(!empty($_GET['cate_id']) ? $category -> id == $_GET['cate_id'] : false)
+                    <a href = "/product?cate_id={{$category -> id}}" class = "cate-item cate-item-active">{{$category -> title}}</a>
+                @else
+                    <a href = "/product?cate_id={{$category -> id}}" class = "cate-item">{{$category -> title}}</a>
+                @endif
+                
             @endforeach
+            <div class = "card-cate-body-item"><i class="fa-solid fa-caret-down"></i></div>
         </div>
         
     </div>

@@ -81,13 +81,16 @@
     </style>
 @endsection
 
+@php 
+    $pagination = $products;
+@endphp
+
 @section('main')
     <div class="home">
         <div class="title">
             <h3>DANH SÁCH SẢN PHẨM</h3>
         </div>
         <div class="product-list">
-
             @foreach($products as $product)
                 <a href="{{ route('product_detail', ['slug' => $product->slug]) }}" class="item">
                     <div class="img">
@@ -96,7 +99,6 @@
                     <div class="info">
                         <p class="name">{{$product -> title}}</p>
                         <p class="price">
-                            
                             @if(!empty($product -> discount)) 
                                 <span>{{number_format($product -> price)}}đ</span>
                                 <span>{{number_format($product -> price - $product -> price * $product -> discount / 100) > 0 ? number_format($product -> price - $product -> price * $product -> discount / 100).'đ' : 'Miễn phí'}}</span>
@@ -109,5 +111,10 @@
                 </a>
             @endforeach
         </div>
+        @if($products -> lastpage() > 1)
+            <div class="pagination">
+                @include('partials.user.pagination')
+            </div>
+        @endif
     </div>
 @endsection

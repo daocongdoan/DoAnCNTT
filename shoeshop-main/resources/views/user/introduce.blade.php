@@ -84,13 +84,18 @@
 @endsection
 
 @section('main')
+    <div class="title" style="margin-left: 20px">
+        <h3>Giới thiệu</h3>
+    </div>
+    <br>
     <div class="introduce">
+
         <p><b>Chuỗi cửa hàng Doan-Store là chuỗi cửa hàng giày lớn trên toàn quốc</b><p>
         <p>Dù mới chỉ được thành lập cách đây 3 năm, tuy nhiên, cửa hàng đẫ được mở rộng thêm nhiều chi nhánh trên toàn miền bắc</p>
-        <p>Cụ thể như</p>
-        <p>Chi nhánh 1: Đặt tại số 132/78, Nguyên Xá, Bắc Từ Liêm, Hà Nội</p>
-        <p>Chi nhánh 2: Số nhà 20, ngõ 91, đường Trần Duy Hưng, Cầu Giấy, Hà Nội</p>
-        <p>Chi nhánh 3: Nghĩa An,Ninh Giang, Hải Dương</p>
-        <img src="D:\Thực Tập Doanh Nghiệp\Thực Tập Doanh Nghiệp" alt="cuahang">
+        <p>Các chi nhánh trên toàn quốc đều đảm bảo về uy tín, giá cả cũng như chất lượng sản phẩm</p>
+        <p>Với công sức mà các chủ cửa hàng đã đặt ra thì đây luôn là điểm đến hàng đầu dành cho những người chơi giày sành điệu</p>
+        <img src="{{asset('assets/images/users/chgiay1.jpg')}}" alt="cuahang" style="width: 300px">
+        <img src="{{asset('assets/images/users/chgiay2.jpg')}}" alt="cuahang" >
+        <img src="{{asset('assets/images/users/chgiay3.jpg')}}" alt="cuahang" style="width: 300px">
     </div>
 @endsection

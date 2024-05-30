@@ -1,5 +1,19 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
+var open = false;
+
+$('.card-cate-body-item').addEventListener('click',function () {
+    open = !open;
+    const len = $$('.card-cate-body .cate-item').length;
+    if(open) {
+        $('.card-cate-body').style.height = len * 40 + 'px';
+        $('.card-cate-body-item').style.transform = 'rotate(180deg)';
+    }else {
+        $('.card-cate-body').style.height = len >= 3 ? 120 + 'px' : len * 40 + 'px';
+        $('.card-cate-body-item').style.transform = 'rotate(0deg)';
+    }
+    
+});
 
 document.onreadystatechange = function () {
     if (document.readyState === "complete") {
@@ -30,6 +44,8 @@ const open_href = function (href) {
     window.location.replace(href.toString());
 }
 
+
+
 const handleLogOutBtn = () => {
     
     if(!$('.logOutBtn_Active')) {
@@ -44,10 +60,28 @@ const handleLogOutBtn = () => {
     else  $('.logOutBtn_Active').classList.remove('logOutBtn_Active');
 }
 
-$('.userBtn').addEventListener('click',handleLogOutBtn);
+document.addEventListener('DOMContentLoaded', function() {
+  const userBtns = document.querySelectorAll('.userBtn');
+  userBtns.forEach(btn => {
+    btn.addEventListener('click', handleLogOutBtn);
+  });
+});
 
 function closeBtnSuccess() {
+    console.log("Hello")
     $('.success_add').classList.add('success_close');
 }
 
+
 $('.closeAdd').addEventListener('click',closeBtnSuccess);
+
+
+function closeBtnError() {
+    console.log("Hello")
+    $('.error_add').classList.add('error_close');
+}
+
+
+$('.closeAdd1').addEventListener('click',closeBtnError);
+
+
